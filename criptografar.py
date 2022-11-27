@@ -1,12 +1,4 @@
-
-# função que calcula uma exponencial através do resto
-def expo_mod(base, expoente, modulo):
-   counter = 1
-   while (expoente > 0):
-      counter = ((counter * base) % modulo)
-      expoente -= 1
-   return counter
-
+#função que encriptografa a mensagem
 def encrypt():
    message = input("Digite a mensagem a ser criptografada: \n")
 
@@ -43,7 +35,7 @@ def encrypt():
    i = 0
    tmp = 0
    while (i < len(message_list)):
-    tmp = pow(message_list[i], e, n)
+    tmp = pow(message_list[i], e, n) #fast mod pow
     message_list[i] = tmp % n
     i += 1
 

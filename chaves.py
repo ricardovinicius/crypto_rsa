@@ -1,9 +1,13 @@
 import math
-    
+
+#função para checar se os números inseridos são realmente primos    
 def checa_primo(numero):
     if (numero == 0 or numero == 1):
         return 0
     
+    if (numero % 2 == 0):
+        return 0
+
     divisor = 3
 
     while (divisor <= math.sqrt(numero)):
@@ -13,6 +17,7 @@ def checa_primo(numero):
     
     return 1
 
+#função que calcula mdc através do alg de euclides
 def euclides(num1, num2):
     if (num1 < num2):
         temp = num1
@@ -26,6 +31,7 @@ def euclides(num1, num2):
     
     return num1
 
+#função principal do módulo de gerar chaves
 def gerar_chaves():
     print("Gerar chaves:\n")
 

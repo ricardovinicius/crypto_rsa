@@ -1,11 +1,4 @@
-# função que calcula uma exponencial através do resto
-def expo_mod(base, expoente, modulo):
-   counter = 1
-   while (expoente > 0):
-      counter = ((counter * base) % modulo)
-      expoente -= 1
-   return counter
-
+#função que encontra t da cong linear de dois números
 def find_t(arrayofquoc, quocCounter):
     i = 0
     tmp = 0
@@ -22,7 +15,8 @@ def find_t(arrayofquoc, quocCounter):
         return t
     else:
         return t * (-1)
-   
+
+#função que calcula o inverso modular através do alg de euclides extendido   
 def invmod(numA, numB):
     tmp = 0
     quoc = []
@@ -38,12 +32,9 @@ def invmod(numA, numB):
 
     inverso = find_t(quoc, len(quoc) - 1)
     
-    while (inverso < 0):
-        inverso = inverso + initialnumB
-        #print(inverso)
-    
     return inverso
 
+#função principal do módulo de descriptografar
 def decrypt():
     print("Digite dois números 'p' e 'q' e o expoente 'e'\n")
     p = int(input())
